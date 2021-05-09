@@ -1,3 +1,4 @@
+import 'package:curos_jacob_design/src/login/provider/provider_page_controller.dart';
 import 'package:flutter/material.dart';
 
 import 'package:curos_jacob_design/src/login/widgets/circle_button.dart';
@@ -48,14 +49,19 @@ class _LoginSignupWidgetState extends State<LoginSignupWidget> {
           Container(
             height: 20,
           ),
-          Container(
-            width: double.infinity,
-            child: Text(
-              "Already have an account?",
-              textAlign: TextAlign.right,
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Theme.of(context).accentColor),
+          GestureDetector(
+            onTap: () {
+              ProviderPageController.of(context).animateToPage(2);
+            },
+            child: Container(
+              width: double.infinity,
+              child: Text(
+                "Already have an account?",
+                textAlign: TextAlign.right,
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).accentColor),
+              ),
             ),
           ),
           Container(
